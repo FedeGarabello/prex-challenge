@@ -35,25 +35,41 @@ Follow these steps to set up and run the project:
    php artisan sail:install
    ```
 
-4. **Generate the application key:**
-   ```bash
-   ./vendor/bin/sail artisan key:generate
-   ```
-
-5. **Start the project:**
+4. **Start the project:**
    ```bash
    ./vendor/bin/sail up -d
    ```
+
+5. **Generate the application key:**
+   ```bash
+   ./vendor/bin/sail artisan key:generate
+   ```
+6. **Create passport client credentials to replace into the env configuration listed above ⬆️**
+
+    ```bash
+    ./vendor/bin/sail artisan passport:client --client
+    ```
+7. **Generate the passport Keys**  
+
+   ```bash
+   ./vendor/bin/sail artisan passport:keys
+   ```
+
+8. **Register :D**
+
 
 ---
 
 ## 📌 Available Endpoints
 
-| **Endpoint**       | **Description**                   |
-|--------------------|-----------------------------------|
-| `/api/register`    | Register a new user               |
-| `/api/login`       | Login and get an access token     |
-| `/api/logout`      | Logout and revoke the token       |
+| **Endpoint**                | **Description**                   |
+|-----------------------------|-----------------------------------|
+| `/api/register`             | Register a new user               |
+| `/api/login`                | Login and get an access token     |
+| `/api/logout`               | Logout and revoke the token       |
+| `/api/gifs/search?`         | Search gifs with query string     |
+| `/api/gifs/{id}`            | Search gifs by id                 |
+| `/api/gifs/{id}/favorite`   | Add Gif to favorite table         |
 
 Additionally, all details related to the project's endpoints can be found at [this postman collection](https://documenter.getpostman.com/view/7945247/2sAYHzH436).
 
